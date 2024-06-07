@@ -29,11 +29,28 @@ namespace Calculator_App
             {
                 var sum = number1 + number2;
                 Console.WriteLine(
-                    number1 + "+" + number2 + "+" + "=" + sum
+                    number1 + " + " + number2 + " = " + sum
                     );
             }
+            else if (choice == "S" || choice == "s")
+            {
+                var difference = number1 - number2;
+                Console.WriteLine(
+                    number1 + " - " + number2 + " = " + difference
+                    );
+            }
+            else if (choice == "M" || choice == "m")
+            {
+                var multiplied = number1 * number2;
+                Console.WriteLine(
+                    number1 + " * " + number2 + " = " + multiplied
+                    );
+            }
+            else
+            {
+                Console.WriteLine("Invalid Choice");
+            }
 
-            Console.WriteLine("Press any key to close");
             Console.ReadKey();
         }
     }
