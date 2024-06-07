@@ -18,6 +18,23 @@ namespace Calculator_App
             Console.WriteLine("Input your second number");
             var secondAsText = Console.ReadLine();
             var number2 = int.Parse(secondAsText);
+
+            Console.WriteLine("What do you want to do?");
+            Console.WriteLine("[A]dd numbers");
+            Console.WriteLine("[S]ubtract numbers");
+            Console.WriteLine("[M]ultiply numbers");
+            var choice = Console.ReadLine();
+
+            if (choice == "A" || choice == "a")
+            {
+                var sum = number1 + number2;
+                Console.WriteLine(
+                    number1 + "+" + number2 + "+" + "=" + sum
+                    );
+            }
+
+            Console.WriteLine("Press any key to close");
+            Console.ReadKey();
         }
     }
 }
