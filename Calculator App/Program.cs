@@ -17,19 +17,20 @@ class Program
         Console.WriteLine("[A]dd numbers");
         Console.WriteLine("[S]ubtract numbers");
         Console.WriteLine("[M]ultiply numbers");
+
         var choice = Console.ReadLine();
 
-        if (choice == "A" || choice == "a")
+        if (EqualsCaseInsensitive(choice, "A"))
         {
             var sum = number1 + number2;
             PrintFinalEquation(number1, number2, sum, "+");
         }
-        else if (choice == "S" || choice == "s")
+        else if (EqualsCaseInsensitive(choice, "S"))
         {
             var difference = number1 - number2;
             PrintFinalEquation(number1, number2, difference, "-");
         }
-        else if (choice == "M" || choice == "m")
+        else if (EqualsCaseInsensitive(choice, "M"))
         {
             var multiplied = number1 * number2;
             PrintFinalEquation(number1, number2, multiplied, "*");
@@ -42,8 +43,14 @@ class Program
         Console.ReadKey();
     }
 
+
     static void PrintFinalEquation(int number1, int number2, int result, string @operator)
     {
         Console.WriteLine(number1 + " " + @operator + " " + number2 + " = " + result);
+    }
+
+    static bool EqualsCaseInsensitive(string left, string right)
+    {
+        return left.ToUpper() == right.ToUpper();
     }
 }
